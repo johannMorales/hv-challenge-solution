@@ -1,5 +1,5 @@
 {
-  "pages": 1,
+  "pages": 10,
   "api": {
     "endpoint": "http://app-homevision-staging.herokuapp.com/api_project/houses",
     "maxRetries": -1
