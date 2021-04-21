@@ -1,0 +1,11 @@
+{
+  "pages": 1,
+  "api": {
+    "endpoint": "http://app-homevision-staging.herokuapp.com/api_project/houses",
+    "maxRetries": -1
+  },
+  "photos": {
+    "dir": "./out",
+    "maxRetries": -1
+  }
+}
