@@ -34,7 +34,7 @@ function getHousePhoto(house) {
   const { maxRetries, dir } = config.photos;
   const { id, address, photoURL } = house;
   const factory = () => axios.get(photoURL);
-  const filename = `id-${id}-${address}.${getExtension(photoURL)}`;
+  const filename = `id-${id}-${address.replace(/\s/gi, "_")}.${getExtension(photoURL)}`;
 
   return request(filename, factory, maxRetries)
     .then((response) => {
