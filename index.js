@@ -31,14 +31,14 @@ function getExtension(url) {
 }
 
 function getHousePhoto(house) {
-  const { maxRetries } = config.photos;
+  const { maxRetries, dir } = config.photos;
   const { id, address, photoURL } = house;
   const factory = () => axios.get(photoURL);
   const filename = `id-${id}-${address}.${getExtension(photoURL)}`;
 
   return request(filename, factory, maxRetries)
     .then((response) => {
-      fs.writeFile(`${config.photos.dir}/${filename}`, response.data, () => {
+      fs.writeFile(`${dir}/${filename}`, response.data, () => {
         console.log("😸 Got photo for house", house);
       });
     })
